@@ -1,0 +1,13 @@
+# output
+output
+
+# Folders
+.vs/
+bin/
+obj/
+
+# Files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
