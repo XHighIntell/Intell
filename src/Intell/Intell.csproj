@@ -6,11 +6,10 @@
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <BaseOutputPath>..\..\output\$(MSBuildProjectName)</BaseOutputPath>
-        <BaseIntermediateOutputPath>..\..\output\$(MSBuildProjectName)\obj</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Intell.Net.Sockets.Tcp\TcpSocketBase.NET6.cs" />
       <Compile Remove="Intell.Net.Sockets.Tcp\TcpSocketBase.NET60.cs" />
     </ItemGroup>
 

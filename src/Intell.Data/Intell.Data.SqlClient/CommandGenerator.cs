@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Data.SqlClient;
-using static Azure.Core.HttpHeader;
 
 namespace Intell.Data.SqlClient {
     public static class CommandGenerator {

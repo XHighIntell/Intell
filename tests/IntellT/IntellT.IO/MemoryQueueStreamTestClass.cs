@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Intell.IO;
 
 namespace IntellT.IO {
@@ -28,8 +23,6 @@ namespace IntellT.IO {
 
             if (count != correct_count) throw new Exception("Fail test");
             if (text != correct_text) throw new Exception("Fail test");
-
-
         }
     }
 }

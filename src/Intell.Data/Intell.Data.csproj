@@ -6,7 +6,7 @@
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <BaseOutputPath>..\..\output\$(MSBuildProjectName)</BaseOutputPath>
-        <BaseIntermediateOutputPath>..\..\output\$(MSBuildProjectName)\obj</BaseIntermediateOutputPath>
+        <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
     </PropertyGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
