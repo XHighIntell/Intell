@@ -7,10 +7,18 @@
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <BaseOutputPath>..\..\output\$(MSBuildProjectName)</BaseOutputPath>
         <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
+        <Version>2.0.0.0</Version>
+        <Description>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Description>
+        <PackageIcon>icon.png</PackageIcon>
+        <RepositoryUrl>https://github.com/xhighintell/intell</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Remove="Intell.Net.Sockets.Tcp\TcpSocketBase.NET60.cs" />
+        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png"/>        
+    </ItemGroup>
+    
+    <ItemGroup>        
+        <Compile Remove="Intell.Net.Sockets.Tcp\TcpSocketBase.NET60.cs" />
     </ItemGroup>
 
     
