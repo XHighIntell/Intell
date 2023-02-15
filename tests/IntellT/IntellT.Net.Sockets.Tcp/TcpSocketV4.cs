@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IntellT.Net.Sockets.Tcp {
-
-    [TestClassAttribute("Intell.Net.Sockets.Tcp.TcpSocketV4")]
+﻿namespace IntellT.Net.Sockets.Tcp {
+    [TestClassAttribute("Intell.Net.Sockets.Tcp.TcpSocket - Ipv4")]
     public class TcpSocketV4TestForm: TcpSocketTestForm {
-        public TcpSocketV4TestForm() : base(AddressFamily.InterNetworkV6) { 
+        public TcpSocketV4TestForm() : base(System.Net.Sockets.AddressFamily.InterNetworkV6) { 
         
         }
     }
