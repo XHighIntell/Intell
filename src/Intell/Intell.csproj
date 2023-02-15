@@ -13,7 +13,11 @@
         <Title>Intell</Title>
         <PackageId>Intell</PackageId>
         <Authors>X High Intell</Authors>
+        <Copyright>X High Intell Copyright © 2023</Copyright>
         <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>Intell;Socket;Win32;X High Intell</PackageTags>
         <Description>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Description>
         <Summary>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Summary>
         <RepositoryUrl>https://github.com/xhighintell/intell</RepositoryUrl>
@@ -22,6 +26,7 @@
     
     <ItemGroup>
         <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png"  />
+        <None Include="README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
     
     <ItemGroup>        

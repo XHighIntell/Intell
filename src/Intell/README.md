@@ -1,0 +1,2 @@
+﻿Intell is a library for the .NET platform. It contains many useful features for development server, window applications. Intellv2 is the open-source version with many classes being rewritten and removed from its original closed source version. 
+To learn more checkout: https://github.com/XHighIntell/Intell
