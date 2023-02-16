@@ -21,12 +21,13 @@
         <Description>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Description>
         <Summary>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Summary>
         <RepositoryUrl>https://github.com/xhighintell/intell</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     
     <ItemGroup>
-        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png"  />
-        <None Include="README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png" />
+        <None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
     
     <ItemGroup>        
