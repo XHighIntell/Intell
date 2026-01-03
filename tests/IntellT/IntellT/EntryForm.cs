@@ -30,14 +30,14 @@ namespace IntellT {
 
                 if (tester.Type.IsSubclassOf(typeof(Form)) == true) {
                     var thread = new Thread(() => {
-                        Application.Run((Form)Activator.CreateInstance(tester.Type));
+                        Application.Run((Form)Activator.CreateInstance(tester.Type)!);
                     });
                     thread.Start();
                 }
 
                 if (typeof(ITestClass).IsAssignableFrom(tester.Type) == true) {
-                    var testclass = (ITestClass)Activator.CreateInstance(tester.Type);
-                    testclass.Run();
+                    var testclass = (ITestClass)Activator.CreateInstance(tester.Type)!;
+                    testclass!.Run();
                 }
                 if (tester.Type.IsSubclassOf(typeof(ITestClass)) == true) {
                     

@@ -5,25 +5,37 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <BaseOutputPath>..\..\output\$(MSBuildProjectName)</BaseOutputPath>
-        <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
+        <BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <Version>2.0.0</Version>
+        <!-- Nuget information -->
+        <Title>Intell.Data</Title>
+        <PackageId>Intell.Data</PackageId>
+        <Authors>X High Intell</Authors>
+        <Copyright>X High Intell Copyright © 2023</Copyright>
+        <PackageIcon>icon.png</PackageIcon>
+        <Description>Intell.Data is a general purpose, high-performance library for the .NET platform. It provides useful classes for Microsoft.Data.SqlClient.</Description>
     </PropertyGroup>
 
+    <ItemGroup>
+        <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png" />
+    </ItemGroup>
+    
     <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
         <PackageReference Include="Microsoft.Data.SqlClient">
-            <Version>5.1.0</Version>
+            <Version>6.1.2</Version>
         </PackageReference>
     </ItemGroup>
     
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
       <PackageReference Include="Microsoft.Data.SqlClient">
-        <Version>5.1.0</Version>
+        <Version>6.1.2</Version>
       </PackageReference>
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
       <PackageReference Include="Microsoft.Data.SqlClient">
-        <Version>5.1.0</Version>
+        <Version>6.1.2</Version>
       </PackageReference>
     </ItemGroup>
 
