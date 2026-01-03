@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Intell.Data.SqlClient {
             else if (type == typeof(float)) return value.ToString();
             else if (type == typeof(bool)) return (bool)value == true ? "1" : "0";
             else if (type == typeof(DateTime)) return "'" + ((DateTime)value).ToString("s") + "'";
-            else if (type == typeof(string)) return "'" + EscapeString(value.ToString()) + "'";
+            else if (type == typeof(string)) return "N'" + EscapeString(value.ToString()) + "'";
             else if (type == typeof(Guid)) return "'" + value.ToString() + "'";
             else if (type == typeof(DBNull)) return "NULL";
             else if (type == typeof(byte[])) return "0x" + ByteArrayToHexViaLookup32((byte[])value);
@@ -29,13 +30,14 @@ namespace Intell.Data.SqlClient {
         }
         ///<summary>Escapes the string for value.</summary>
         public static string EscapeString(string value) { return value.Replace("'", "''"); }
+
+        static readonly string[] Keywords = { "key", "open", "close", "create", "drop", "table", "if", "into", "insert", "values", "constraint" };
+
         ///<summary>Escapes the column name if nessesary. fn("key") return "[key]".</summary>
         public static string EscapeColumnName(string name) {
             if (name.StartsWith("[") == true && name.EndsWith("]") == true) return name;
-            if (name.Equals("key", StringComparison.OrdinalIgnoreCase) == true) return "[key]";
-            else {
-                if (name.Contains("-")) return "[" + name + "]";
-            }
+            if (Keywords.Contains(name.ToLower()) == true) return $"[{name}]";
+            else if (name.Contains('-')) return "[" + name + "]";
 
             return name;
         }

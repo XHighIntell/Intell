@@ -12,3 +12,6 @@ The Intell package supports the below environments:
 - .NET Framework 4.6+
 - .NET 6.0+
 - .NET Standard 2.0+
+
+## Nuget
+The nuget package can be found at [nuget.org/packages/Intell](https://www.nuget.org/packages/Intell)

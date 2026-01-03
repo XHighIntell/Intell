@@ -23,39 +23,39 @@ namespace Intell.Data.SqlClient.Extension {
         }
 
 
-        public static int ExecuteNonQuery(SqlConnection connection, string commandText) {
+        public static int ExecuteNonQuery(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return command.ExecuteNonQuery();
             }
         }
-        public static async Task<int> ExecuteNonQueryAsync(SqlConnection connection, string commandText) {
+        public static async Task<int> ExecuteNonQueryAsync(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return await command.ExecuteNonQueryAsync();
             }
         }
 
-        public static SqlDataReader ExecuteReader(SqlConnection connection, string commandText) {
+        public static SqlDataReader ExecuteReader(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return command.ExecuteReader();
             }
         }
-        public static async Task<SqlDataReader> ExecuteReaderAsync(SqlConnection connection, string commandText) {
+        public static async Task<SqlDataReader> ExecuteReaderAsync(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return await command.ExecuteReaderAsync();
             }
         }
 
-        public static object ExecuteScalar(SqlConnection connection, string commandText) {
+        public static object ExecuteScalar(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return command.ExecuteScalar();
             }
         }
-        public static async Task<object> ExecuteScalarAsync(SqlConnection connection, string commandText) {
+        public static async Task<object> ExecuteScalarAsync(this SqlConnection connection, string commandText) {
             using (var command = connection.CreateCommand()) {
                 command.CommandText = commandText;
                 return await command.ExecuteScalarAsync();
