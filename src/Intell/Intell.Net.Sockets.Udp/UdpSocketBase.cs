@@ -100,7 +100,7 @@ namespace Intell.Net.Sockets.Udp {
                 case SocketError.Success:
                     var size = e.BytesTransferred;
                     // --1--
-                    if (size != 0) OnReceived(_receiveBuffer, 0, size);
+                    if (size != 0) OnReceived(e.RemoteEndPoint as IPEndPoint, _receiveBuffer, 0, size);
 
                     var r = _socket.Poll(0, SelectMode.SelectRead);
                     if (r == true && _socket.Available == 0) {
@@ -120,8 +120,6 @@ namespace Intell.Net.Sockets.Udp {
                 default:
                     throw new SocketException((int)error);
             }
-
-            var x = e;
         }
         void sendCallback(object sender, SocketAsyncEventArgs e) {
             var error = e.SocketError;
@@ -141,7 +139,7 @@ namespace Intell.Net.Sockets.Udp {
 
 
         ///<summary>A empty callback override it to customize.</summary>
-        protected abstract void OnReceived(byte[] buffer, int offset, int size);
+        protected abstract void OnReceived(IPEndPoint remoteEndPoint, byte[] buffer, int offset, int size);
         ///<summary>A empty callback override it to customize.</summary>
         protected abstract void OnStateChanged(UdpSocketState previousState, UdpSocketState state);
     }

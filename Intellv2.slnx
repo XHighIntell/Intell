@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Intell.Data/Intell.Data.csproj" />
+    <Project Path="src/Intell.Windows/Intell.Windows.csproj" />
+    <Project Path="src/Intell/Intell.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/IntellT/IntellT.csproj" />
+    <Project Path="tests/IntellU/IntellU.csproj" />
+  </Folder>
+</Solution>

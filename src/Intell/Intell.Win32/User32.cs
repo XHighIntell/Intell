@@ -11,6 +11,10 @@ public static partial class User32 {
     [DllImport("user32")] public static extern IntPtr GetWindowDC(IntPtr hWnd);
     [DllImport("user32")] public static extern bool GetWindowRect(IntPtr hwnd, out Rectangle lpRect);
     [DllImport("user32")] public static extern IntPtr GetParent(IntPtr hWnd);
+    [DllImport("user32", CharSet = CharSet.Auto)] public static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
+    [DllImport("user32", CharSet = CharSet.Ansi)] public static extern int GetClassNameA(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
+    [DllImport("user32", CharSet = CharSet.Unicode)] public static extern int GetClassNameW(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
+
     [DllImport("user32", CharSet = CharSet.Auto)] public static extern bool SetWindowText(IntPtr hwnd, string lpString);
     [DllImport("user32", CharSet = CharSet.Ansi)] public static extern bool SetWindowTextA(IntPtr hwnd, string lpString);
     [DllImport("user32", CharSet = CharSet.Unicode)] public static extern bool SetWindowTextW(IntPtr hwnd, string lpString);
@@ -28,9 +32,9 @@ public static partial class User32 {
     [DllImport("user32")] public static extern int DispatchMessageA(ref MSG message);
     [DllImport("user32")] public static extern int DispatchMessageW(ref MSG message);
 
-    [DllImport("user32")] public static extern IntPtr FindWindowA(string lpClassName, string lpWindowName);
-    [DllImport("user32")] public static extern IntPtr FindWindowExA(IntPtr hWndParent, IntPtr hWndChildAfter, string lpszClass, string lpszWindow);
+    [DllImport("user32", CharSet = CharSet.Ansi)]    public static extern IntPtr FindWindowA(string lpClassName, string lpWindowName);
     [DllImport("user32", CharSet = CharSet.Unicode)] public static extern IntPtr FindWindowW(string lpClassName, string lpWindowName);
+    [DllImport("user32", CharSet = CharSet.Ansi)]    public static extern IntPtr FindWindowExA(IntPtr hWndParent, IntPtr hWndChildAfter, string lpszClass, string lpszWindow);
     [DllImport("user32", CharSet = CharSet.Unicode)] public static extern IntPtr FindWindowExW(IntPtr hWndParent, IntPtr hWndChildAfter, string lpszClass, string lpszWindow);
 
     [DllImport("user32")] public static extern int PostMessageA(IntPtr hWnd, uint Msg, int wParam, int lParam);
@@ -51,7 +55,6 @@ public static partial class User32 {
     }
     [DllImport("user32")] public static extern int SetCursorPos(int x, int y);
     [DllImport("user32")] public static extern int ScreenToClient(IntPtr hwnd, ref Point point);
-
     [DllImport("user32")] public static extern int RegisterHotKey(IntPtr hWnd, int id, int Modifiers, int vkey);
     [DllImport("user32")] public static extern int UnregisterHotKey(IntPtr hWnd, int id);
 

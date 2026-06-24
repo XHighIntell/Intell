@@ -1,31 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <TargetFrameworks>net462;net6.0;netstandard2.0</TargetFrameworks>
-        <LangVersion>10.0</LangVersion>
+        <TargetFrameworks>netstandard2.1</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-        <BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
-        <BaseIntermediateOutputPath>obj</BaseIntermediateOutputPath>
-        <AssemblyVersion>2.0.2.2</AssemblyVersion>
-        <Version>2.0.2</Version>
-        <!-- Nuget information -->
-        <Title>Intell</Title>
-        <PackageId>Intell</PackageId>
-        <Authors>X High Intell</Authors>
-        <Copyright>X High Intell Copyright © 2026</Copyright>
-        <PackageIcon>icon.png</PackageIcon>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageTags>Intell;Socket;Win32;X High Intell</PackageTags>
-        <Description>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Description>
-        <Summary>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Summary>
-        <RepositoryUrl>https://github.com/xhighintell/intell</RepositoryUrl>
-        <RepositoryType>git</RepositoryType>
-        <Configurations>Debug;Release</Configurations>
+        <AssemblyVersion>2.0.4.5</AssemblyVersion>
+        <Version>2.0.4</Version>
+		<BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
     </PropertyGroup>
 
+	<PropertyGroup Label="Nuget Package Details">
+		<Title>Intell</Title>
+		<PackageId>Intell</PackageId>
+		<Authors>X High Intell</Authors>
+		<Copyright>X High Intell Copyright © 2026</Copyright>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageTags>Intell;Socket;Win32;X High Intell</PackageTags>
+		<Description>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Description>
+		<Summary>Intell is a general purpose, high-performance library for the .NET platform. It provides useful classes for IO, Socket, and Win32 API.</Summary>
+		<RepositoryUrl>https://github.com/xhighintell/intell</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Configurations>Debug;Release</Configurations>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+	
     
     <ItemGroup>
         <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png" />

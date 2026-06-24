@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net462;net6.0;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.1</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
         <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <Version>2.0.0</Version>
+		<LangVersion>10.0</LangVersion>
         <!-- Nuget information -->
         <Title>Intell.Data</Title>
         <PackageId>Intell.Data</PackageId>
@@ -20,22 +21,10 @@
     <ItemGroup>
         <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png" />
     </ItemGroup>
-    
-    <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
-        <PackageReference Include="Microsoft.Data.SqlClient">
-            <Version>6.1.2</Version>
-        </PackageReference>
-    </ItemGroup>
-    
-    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-      <PackageReference Include="Microsoft.Data.SqlClient">
-        <Version>6.1.2</Version>
-      </PackageReference>
-    </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
       <PackageReference Include="Microsoft.Data.SqlClient">
-        <Version>6.1.2</Version>
+        <Version>7.0.1</Version>
       </PackageReference>
     </ItemGroup>
 

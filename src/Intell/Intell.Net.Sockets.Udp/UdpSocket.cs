@@ -5,7 +5,7 @@ using System.Net.Sockets;
 
 namespace Intell.Net.Sockets.Udp {
 
-    public delegate void UdpSocketReceiveHandler(UdpSocket socket, byte[] buffer, int offset, int count);
+    public delegate void UdpSocketReceiveHandler(UdpSocket socket, IPEndPoint remoteEndPoint, byte[] buffer, int offset, int count);
     public delegate void UdpSocketStateChangeHandler(UdpSocket socket, UdpSocketState oldState, UdpSocketState newState);
 
 
@@ -24,8 +24,8 @@ namespace Intell.Net.Sockets.Udp {
         public new void SendTo(byte[] buffer, int offset, int count, IPEndPoint endPoint) { base.SendTo(buffer, offset, count, endPoint); }
         public new void SendTo(IList<ArraySegment<byte>> buffers, IPEndPoint endPoint) { base.SendTo(buffers, endPoint); }
 
-        protected override void OnReceived(byte[] buffer, int offset, int count) {
-            Received?.Invoke(this, buffer, offset, count);
+        protected override void OnReceived(IPEndPoint remoteEndPoint, byte[] buffer, int offset, int count) {
+            Received?.Invoke(this, remoteEndPoint, buffer, offset, count);
         }
         protected override void OnStateChanged(UdpSocketState oldState, UdpSocketState newstate) {
             StateChanged?.Invoke(this, oldState, newstate);

@@ -59,11 +59,12 @@ namespace IntellT.Net.Sockets.Udp {
             }
             listStates.Clear();
         }
-        void onReceived(UdpSocket sender, byte[] buffer, int offset, int count) {
+        void onReceived(UdpSocket sender, IPEndPoint remoteEndPoint, byte[] buffer, int offset, int count) {
             this.Invoke(new Action(() => {
                 var bytes = new byte[count];
                 Buffer.BlockCopy(buffer, offset, bytes, 0, count);
-                var text = Encoding.ASCII.GetString(bytes, 0, bytes.Length);
+
+                var text = remoteEndPoint.Address.ToString() + ":" + Encoding.ASCII.GetString(bytes, 0, bytes.Length) + "\r\n";
                 _logText.Text += text;
             }));
         }
