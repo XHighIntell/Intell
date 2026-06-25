@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.1</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>disable</Nullable>
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-        <AssemblyVersion>2.0.4.5</AssemblyVersion>
-        <Version>2.0.4</Version>
+        <AssemblyVersion>2.0.6.7</AssemblyVersion>
+        <Version>2.0.6</Version>
 		<BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
     </PropertyGroup>
 

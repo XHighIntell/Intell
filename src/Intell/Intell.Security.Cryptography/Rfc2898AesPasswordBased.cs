@@ -1,10 +1,10 @@
-﻿
-#if NET6_0_OR_GREATER
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Security.Cryptography;
 
 namespace Intell.Security.Cryptography;
+
+#if NETSTANDARD2_1
 
 ///<summary>Password based using Rfc2898 and Advanced Encryption Standard for transforming small data.</summary>
 public static class Rfc2898AesPasswordBased {
