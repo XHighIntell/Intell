@@ -1,31 +1,32 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.1</TargetFrameworks>
-        <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>disable</Nullable>
+        <TargetFrameworks>net6.0;net8.0;net10.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
-        <AssemblyVersion>2.0.0.0</AssemblyVersion>
-        <Version>2.0.0</Version>
-		<LangVersion>10.0</LangVersion>
+        <AssemblyVersion>2.0.0.3</AssemblyVersion>
+
+        <LangVersion>latest</LangVersion>
         <!-- Nuget information -->
         <Title>Intell.Data</Title>
         <PackageId>Intell.Data</PackageId>
+        <Version>2.0.0-preview3</Version>
         <Authors>X High Intell</Authors>
-        <Copyright>X High Intell Copyright © 2023</Copyright>
+        <Copyright>X High Intell Copyright © 2026</Copyright>
         <PackageIcon>icon.png</PackageIcon>
-        <Description>Intell.Data is a general purpose, high-performance library for the .NET platform. It provides useful classes for Microsoft.Data.SqlClient.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>Intell.Data is a general-purpose, high-performance library for the .NET platform. It provides useful features for working with T-SQL alongside Microsoft.Data.SqlClient.</Description>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
         <None Include="..\..\icon.png" Pack="true" Visible="false" PackagePath="icon.png" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
-      <PackageReference Include="Microsoft.Data.SqlClient">
-        <Version>7.0.1</Version>
-      </PackageReference>
+    <ItemGroup>
+        <Folder Include="Intell.Data\" />
     </ItemGroup>
-
 </Project>

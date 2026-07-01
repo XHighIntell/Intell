@@ -6,5 +6,7 @@
 		-->
 		<DirectoryRoot>$([System.IO.Path]::GetPathRoot($(SolutionDir)))</DirectoryRoot>
 		<BaseIntermediateOutputPath>$(DirectoryRoot)output\$(SolutionName)\$(MSBuildProjectName)\obj\</BaseIntermediateOutputPath>
+
+		<BaseOutputPath>\output\$(SolutionName)\$(MSBuildProjectName)</BaseOutputPath>
     </PropertyGroup>
 </Project>
